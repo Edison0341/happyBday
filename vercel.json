@@ -8,8 +8,16 @@
   ],
   "routes": [
     {
+      "src": "/index.js",
+      "dest": "/public/index.js",
+      "headers": {
+        "Content-Type": "application/javascript",
+        "Cache-Control": "no-cache"
+      }
+    },
+    {
       "src": "/(.*)",
-      "dest": "/public/$1"
+      "dest": "/public/index.html"
     }
   ]
 } 

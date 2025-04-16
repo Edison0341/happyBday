@@ -11,10 +11,39 @@
         canvas {
             display: block;
         }
+        #debug {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            color: lime;  /* Changed to bright green for visibility */
+            font-family: monospace;
+            z-index: 100;
+            font-size: 16px;
+            background: rgba(0,0,0,0.5);
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
+    <div id="debug">Loading page...</div>
     <canvas id="canvas"></canvas>
-    <script src="./index.js"></script>
+    <!-- Change the script loading to include error handling and use relative path -->
+    <script>
+        // Immediate feedback
+        const debug = document.getElementById('debug');
+        
+        // Load the main script
+        const script = document.createElement('script');
+        script.src = 'index.js';
+        script.onerror = () => {
+            debug.textContent = 'Failed to load index.js';
+            debug.style.color = 'red';
+        };
+        script.onload = () => {
+            debug.textContent = 'Script loaded successfully';
+            debug.style.color = 'lime';
+        };
+        document.body.appendChild(script);
+    </script>
 </body>
 </html> 
