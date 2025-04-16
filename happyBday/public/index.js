@@ -104,4 +104,6 @@ Letter.prototype.update = function() {
 
 // Particle system for explosions
 function Particle(x, y, hue) {
-} 
+}
+
+const text = "HAPPY BIRTHDAY, PEDRITO!! MAMA BICHO!!"; 
