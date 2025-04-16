@@ -32,7 +32,7 @@ let allExploded = false;
 function initCanvas() {
     canvas.width = w = window.innerWidth;
     canvas.height = h = window.innerHeight;
-hw = w / 2;
+    hw = w / 2;
     hh = h / 2;
     
     ctx.font = opts.charSize + 'px Verdana';
